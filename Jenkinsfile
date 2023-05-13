@@ -77,7 +77,7 @@ pipeline {
                         
                         
                      
-                        sh "git remote set-url origin https://${USER}:${PASS}@https://github.com/mustafafarag1/Complete-CI-CD-Pipeline-with-Jenkins-kingdom-of-spices.git"
+                        sh "git remote set-url origin https://${USER}:${PASS}@github.com/mustafafarag1/Complete-CI-CD-Pipeline-with-Jenkins-kingdom-of-spices.git"
                         sh 'git add .'
                         sh 'git commit -m "ci: version bump"'
                         sh "git push origin HEAD:${BRANCH_NAME}"
