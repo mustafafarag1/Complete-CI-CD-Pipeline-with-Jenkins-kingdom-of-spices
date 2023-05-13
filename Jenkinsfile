@@ -41,7 +41,7 @@ pipeline {
                     withCredentials([usernamePassword(credentialsId: 'dockerhub-credentails', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
                         sh "docker build -t myimage/demo-app:${IMAGE_NAME} ."
                         sh 'echo $PASS | docker login -u $USER --password-stdin'
-                        sh "docker push ahmedyoussef527/demo-app:${IMAGE_NAME}"
+                        sh 'docker push ahmedyoussef527/demo-app:${IMAGE_NAME}'
                     }
                 }
             }
