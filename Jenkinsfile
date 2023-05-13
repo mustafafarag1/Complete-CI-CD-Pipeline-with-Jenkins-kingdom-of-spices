@@ -70,6 +70,13 @@ pipeline {
                     withCredentials([usernamePassword(credentialsId: 'github-credentials', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
                         sh 'git config user.email "jenkins@example.com"'
                         sh 'git config user.name "Jenkins"'
+                        
+                        sh 'git status'
+                        sh 'git branch'
+                        sh 'git config --list'
+                        
+                        
+                     
                         sh "git remote set-url origin https://${USER}:${PASS}@https://github.com/mustafafarag1/Complete-CI-CD-Pipeline-with-Jenkins-kingdom-of-spices.git"
                         sh 'git add .'
                         sh 'git commit -m "ci: version bump"'
