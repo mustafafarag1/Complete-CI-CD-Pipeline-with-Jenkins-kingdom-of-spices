@@ -70,7 +70,7 @@ pipeline {
                     withCredentials([usernamePassword(credentialsId: 'github-credentials', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
                         sh 'git config user.email "jenkins@example.com"'
                         sh 'git config user.name "Jenkins"'
-                        sh "git remote set-url origin https://${USER}:${PASS}@github.com/mustafafarag/Complete-CI-CD-Pipeline-with-Jenkins.git"
+                        sh "git remote set-url origin https://${USER}:${PASS}@https://github.com/mustafafarag1/Complete-CI-CD-Pipeline-with-Jenkins-kingdom-of-spices.git"
                         sh 'git add .'
                         sh 'git commit -m "ci: version bump"'
                         sh "git push origin HEAD:${BRANCH_NAME}"
