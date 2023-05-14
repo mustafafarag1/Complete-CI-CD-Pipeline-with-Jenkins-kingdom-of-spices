@@ -50,11 +50,7 @@ pipeline {
 
 
         stage('deploy') {
-            
-            
-            when {
-                expression { env.BUILD_BRANCH == 'main' }
-            }
+           
             steps {
                 script {
                     echo 'deploying docker image to ec2 ....'
