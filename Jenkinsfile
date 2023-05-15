@@ -35,6 +35,18 @@ pipeline {
                }
             }
         }
+        
+        
+        stage('Testing') {
+            steps {
+               script {
+                   echo "Testing the application..."
+                   
+               }
+            }
+        }
+        
+        
         stage('build image') {
             steps {
                 script {
@@ -52,6 +64,9 @@ pipeline {
         stage('deploy') {
            
             steps {
+            when {
+                expression {BRANCH_NAME == 'main' }
+            }
                 script {
                     echo 'deploying docker image to ec2 ....'
                     def shellCmd = "bash ./server-cmds.sh ahmedyoussef527/demo-app:${IMAGE_NAME}"
