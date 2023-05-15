@@ -70,7 +70,7 @@ pipeline {
                 script {
                     echo 'deploying docker image to ec2 ....'
                     def shellCmd = "bash ./server-cmds.sh ahmedyoussef527/demo-app:${IMAGE_NAME}"
-                    def ec2Instance = "ubuntu@34.210.161.165"
+                    def ec2Instance = "ubuntu@54.202.195.125"
                     sshagent ( ['ec2-server-key']) {
                         sh "scp -o StrictHostKeyChecking=no server-cmds.sh ${ec2Instance}:/home/ubuntu"
                         sh "scp -o StrictHostKeyChecking=no docker-compose.yaml ${ec2Instance}:/home/ubuntu"
